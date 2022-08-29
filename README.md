@@ -1,44 +1,49 @@
 # Analytico
+Analytico is _super-simple analytics data getherer_ written in pure `Swift 5`.  
 
-Analytico is _super-simple analytics data getherer_ for iOS platform.    
-It is written in pure `Swift 5`.  
+[![Swift](https://github.com/vexy/analytico/actions/workflows/swift-build.yml/badge.svg?branch=main)](https://github.com/vexy/analytico/actions/workflows/swift-build.yml)
 
 As they said:  
 > _Use it wisely_ ☝️
 
 ## Usage
-Using `Analytico` is pretty darn simple. Because all you can do are following two things:
-  - trace app specific events
-  - collect traced events
+Using `Analytico` is pretty darn simple. All you can do are following two things:
+  - trace your custom metrics in iOS way
+  - collect traced metrics
 
-And that's pretty much it... 🤷🏻‍♂️  
+Something like this:
 
-Here are some real world examples:
+### Trace important screen visits using `screenVisit` and `event`
+```Swift
+Analytico.trace(entry: .screenVisit(name: "Signup", metaData: nil)
+Analytico.trace(entry: .event("Signup completed", metaData: "Method: AppleSignin")
+```
+
+### Granually trace your app usage `interaction`
+
+```Swift
+Analytico.trace(entry: .interaction("Help button clicked"))
+```
+
+### Capture app specific events with `systemEvent`
 ```Swift
 // Mark app specific events like this
 Analytico.trace(entry: .systemEvent(.appStart), metaData: "Testing app start trace")
 Analytico.trace(entry: .systemEvent(.iOS.locationUpdate))
-
-// Mark your screen visits this way
-Analytico.trace(entry: .screenVisit(name: "Signup", metaData: nil)
-
-// Mark your important events this way
-Analytico.trace(entry: .event("Signup completed", metaData: "Method: AppleSignin")
-
-// Granually trace your app usage
-Analytico.trace(entry: .interaction("Help button clicked"))
 ```
 
-Then, at some point, if you wish to use your gathered analytics data, just:
+### Collect gathered data for futher processing
 ```Swift
 Analytico.collect()
 ```
+
+And that's pretty much it... 🤷🏻‍♂️  
 
 ## Installation
 `Analytico` can easily be installed using SPM.  
 
 Quick links:  
-> Package name: Analytico
+> Package name: Analytico  
 > URL: https://github.com/vexy/analytico.git
 
 Your `Package.swift` example:
