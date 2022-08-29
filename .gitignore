@@ -1,0 +1,14 @@
+# MacOS leftovers
+.DS_Store
+
+# Compile/Build intermediates
+/.build
+/Packages
+
+# Xcode leftovers
+/*.xcodeproj
+xcuserdata/
+DerivedData/
+
+# SwiftPM
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
