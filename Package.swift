@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "Analytico",
     platforms: [
-        .iOS(.v10), //Add other platforms later
+        .iOS(.v11), //Add other platforms later
     ],
     products: [
         .library(
@@ -19,10 +19,10 @@ let package = Package(
     targets: [
         .target(
             name: "Analytico",
-            dependencies: []
+            dependencies: ["Fridge"]
         ),
         .testTarget(
             name: "AnalyticoTests",
-            dependencies: ["Analytico"]),
+            dependencies: ["Analytico", "Fridge"]),
     ]
 )

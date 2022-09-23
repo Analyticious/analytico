@@ -12,31 +12,7 @@
  */
 
 /// `Analytico.EventType` enum containing supported event types
-public enum EventType {
-    /// Common `SystemEventType` enum contining system-specific event types
-    public enum SystemEventType {
-        case appStart
-        case appForeground
-        case appBackground
-        
-        /// iOS system event types
-        enum iOS {
-            case notification
-            case locationUpdate
-            case backgroundTask
-            case payment
-            
-            //TODO: Add more later
-        }
-        
-        /**
-         TODO: Support other OS types
-           - MacOS
-           - watchOS
-           - tvOS
-         */
-    }
-    
+public enum EventType: Codable {
     /// Sreen visit or appearance
     case screenVisit(name: String)
     
@@ -48,4 +24,28 @@ public enum EventType {
     
     /// Represents system-specific, predefined event
     case systemEvent(_ type: SystemEventType)
+}
+
+/// Common `SystemEventType` enum contining system-specific event types
+public enum SystemEventType: Codable {
+    case appStart
+    case appForeground
+    case appBackground
+    
+    /// iOS system event types
+    enum iOS: Codable {
+        case notification
+        case locationUpdate
+        case backgroundTask
+        case payment
+        
+        //TODO: Add more later
+    }
+    
+    /**
+     TODO: Support other OS types
+       - MacOS
+       - watchOS
+       - tvOS
+     */
 }
