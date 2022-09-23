@@ -4,6 +4,9 @@ import PackageDescription
 
 let package = Package(
     name: "Analytico",
+    platforms: [
+        .iOS(.v10), //Add other platforms later
+    ],
     products: [
         .library(
             name: "Analytico",
@@ -11,8 +14,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        // FRIDGE ?
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(name: "Fridge", url: "https://github.com/vexy/Fridge", branch: "main")
     ],
     targets: [
         .target(

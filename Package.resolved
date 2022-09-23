@@ -1,0 +1,61 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BSONCoder",
+        "repositoryURL": "https://github.com/vexy/bsoncoder",
+        "state": {
+          "branch": "main",
+          "revision": "838e4e78aeb3a0886c9478812b7bb6ed59d269c5",
+          "version": null
+        }
+      },
+      {
+        "package": "Fridge",
+        "repositoryURL": "https://github.com/vexy/Fridge",
+        "state": {
+          "branch": "main",
+          "revision": "8a84b5fbb84f2c8a08183e631e3136b4f20ad864",
+          "version": null
+        }
+      },
+      {
+        "package": "swift-atomics",
+        "repositoryURL": "https://github.com/apple/swift-atomics.git",
+        "state": {
+          "branch": null,
+          "revision": "919eb1d83e02121cdb434c7bfc1f0c66ef17febe",
+          "version": "1.0.2"
+        }
+      },
+      {
+        "package": "swift-extras-base64",
+        "repositoryURL": "https://github.com/swift-extras/swift-extras-base64",
+        "state": {
+          "branch": null,
+          "revision": "778e00dd7cc2b7970742f061cffc87dd570e6bfa",
+          "version": "0.5.0"
+        }
+      },
+      {
+        "package": "swift-extras-json",
+        "repositoryURL": "https://github.com/swift-extras/swift-extras-json",
+        "state": {
+          "branch": null,
+          "revision": "122b9454ef01bf89a4c190b8fd3717ddd0a2fbd0",
+          "version": "0.6.0"
+        }
+      },
+      {
+        "package": "swift-nio",
+        "repositoryURL": "https://github.com/apple/swift-nio",
+        "state": {
+          "branch": null,
+          "revision": "b4e0a274f7f34210e97e2f2c50ab02a10b549250",
+          "version": "2.41.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
