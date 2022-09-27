@@ -5,7 +5,8 @@ import PackageDescription
 let package = Package(
     name: "Analytico",
     platforms: [
-        .iOS(.v11), //Add other platforms later
+        .iOS(.v11),
+        .macOS(.v10_14) // Fridge inheritance
     ],
     products: [
         .library(
@@ -23,6 +24,7 @@ let package = Package(
         ),
         .testTarget(
             name: "AnalyticoTests",
-            dependencies: ["Analytico", "Fridge"]),
+            dependencies: ["Analytico", "Fridge"]
+        )
     ]
 )

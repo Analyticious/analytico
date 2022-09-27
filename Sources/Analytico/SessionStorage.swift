@@ -10,17 +10,18 @@
  
     Date created: 08/29/2022
  */
+import Foundation
 import Fridge
 
 internal class SessionStorage {
     private static var _storage: SessionStorage { SessionStorage() }
     
     // internal session compartment
-    private var sessionContainer: [SessionEntry]
+    private var sessionContainer: [EventTypes]
     private let OBJECT_IDENTIFIER = "analytico"
     
     private init() {
-        // Load from Fridge here, if the laoding fails, create brand new session and add first entry
+        // Load from Fridge here, if the loading fails, create brand new session and add first entry
         do {
             sessionContainer = try Fridge.unfreeze🪅🎉(OBJECT_IDENTIFIER)
         } catch let e {
@@ -33,12 +34,11 @@ internal class SessionStorage {
     
     /// Adds default entry marking session start
     func markSessionStart() {
-        let start = SessionEntry(type: .systemEvent(.appStart), metaData: nil)
-        sessionContainer.append(start)
+        sessionContainer.append(.system(event: .appStart))
         commit()
     }
     
-    func add(_ entry: SessionEntry) {
+    func add(_ entry: EventTypes) {
         sessionContainer.append(entry)
         commit()
     }
@@ -48,12 +48,24 @@ internal class SessionStorage {
         do{
             try Fridge.freeze🧊(sessionContainer, id: OBJECT_IDENTIFIER)
         } catch {
-            print("UNABLE TO COMMIT")
+            print("<SessionStorage> UNABLE TO COMMIT")
         }
     }
     
     func readAllEntries() -> String {
-        return sessionContainer.description
+        // convert entries to JSON output
+        guard let output = try? JSONEncoder().encode(sessionContainer) else {
+            print("<SessionStorage> Unable to form JSON object. Aborting.")
+            return ""
+        }
+        
+        // create String out of encoded output
+        guard let jsonString = String(data: output, encoding: .utf8) else {
+            print("<SessionStorage> Unable to setup JSON string. Aborting.")
+            return ""
+        }
+        
+        return jsonString
     }
     
     /// Singleton access

@@ -21,8 +21,8 @@ public struct Analytico {
         session.markSessionStart()
     }
     
-    /// Adds a given entry to the session log
-    static func trace(entry: SessionEntry) {
+    /// Traces specified event
+    static func trace(_ entry: EventTypes, metaData: String? = nil) {
         session.add(entry)
     }
     

@@ -16,15 +16,15 @@ import Foundation
 public struct SessionEntry: Codable, CustomDebugStringConvertible {
     private var date: Date
     
-    var type: EventType
+    var type: EventTypes
     var metaData: String?
     
     init() {
         date = Date()
-        type = .systemEvent(.appStart)
+        type = .system(event: .appStart)
     }
     
-    init(type: EventType, metaData: String?) {
+    init(type: EventTypes, metaData: String?) {
         date = Date()
         self.type = type
         self.metaData = metaData

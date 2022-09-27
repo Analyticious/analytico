@@ -11,23 +11,8 @@
     Date created: 08/29/2022
  */
 
-/// `Analytico.EventType` enum containing supported event types
-public enum EventType: Codable {
-    /// Sreen visit or appearance
-    case screenVisit(name: String)
-    
-    /// Interaction with (_typically_) UI element of the app
-    case interaction(`object`: String)
-    
-    /// Represents an abstract, _app-specific_ event. Example: "Subscription purchased"
-    case event(name: String)
-    
-    /// Represents system-specific, predefined event
-    case systemEvent(_ type: SystemEventType)
-}
-
-/// Common `SystemEventType` enum contining system-specific event types
-public enum SystemEventType: Codable {
+/// Common `SystemEvents` enum containing system-specific event types
+public enum SystemEvents: Codable {
     case appStart
     case appForeground
     case appBackground
@@ -48,4 +33,19 @@ public enum SystemEventType: Codable {
        - watchOS
        - tvOS
      */
+}
+
+/// `Analytico.EventTypes` enum containing supported event types
+public enum EventTypes: Codable {
+    /// Sreen visit or appearance
+    case screenVisit(name: String)
+    
+    /// Interaction with (_typically_) UI element of the app
+    case interaction(`object`: String)
+    
+    /// Represents an abstract, _app-specific_ event. Example: "Subscription purchased"
+    case event(name: String)
+    
+    /// Represents system-specific, predefined event
+    case system(event: SystemEvents)
 }
