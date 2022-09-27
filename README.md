@@ -1,5 +1,5 @@
 # Analytico
-Analytico is _super-simple analytics data getherer_ written in pure `Swift 5`.  
+Analytico is _super-simple analytics data collector_ written in pure `Swift 5`.  
 
 [![Swift](https://github.com/vexy/analytico/actions/workflows/swift-build.yml/badge.svg?branch=main)](https://github.com/vexy/analytico/actions/workflows/swift-build.yml)
 
@@ -8,36 +8,33 @@ As they said:
 
 ## Usage
 Using `Analytico` is pretty darn simple. All you can do are following two things:
-  - trace your custom metrics in iOS way
-  - collect traced metrics
+  - **trace** your custom metrics in iOS friendly way
+  - **collect** traced metrics for further analysis
 
-Something like this:
-
-### Trace important screen visits using `screenVisit` and `event`
+### Trace screen visits using `screenVisit` and `event` enums.
 ```Swift
-Analytico.trace(entry: .screenVisit(name: "Signup", metaData: nil)
-Analytico.trace(entry: .event("Signup completed", metaData: "Method: AppleSignin")
+Analytico.trace(.screenVisit(name: "Signup", metaData: nil)
+Analytico.trace(.event("Signup completed", metaData: "Method: AppleSignin")
 ```
 
-### Granually trace your app usage `interaction`
-
+### Granually trace app usage with `interaction` enum.
 ```Swift
-Analytico.trace(entry: .interaction("Help button clicked"))
+Analytico.trace(.interaction("Help button clicked"))
 ```
 
-### Capture app specific events with `systemEvent`
+### Capture app specific events with `systemEvent` enum.
 ```Swift
-// Mark app specific events like this
-Analytico.trace(entry: .systemEvent(.appStart), metaData: "Testing app start trace")
-Analytico.trace(entry: .systemEvent(.iOS.locationUpdate))
+Analytico.trace(.systemEvent(.appStart), metaData: "App initialized...")
+Analytico.trace(.systemEvent(.iOS.locationUpdate))
 ```
 
-### Collect gathered data for futher processing
+### `collect` gathered data for futher processing
 ```Swift
-Analytico.collect()
+Analytico.collect()     // still in progress, don't rely on this untill v1.0 !!
 ```
 
-And that's pretty much it... 🤷🏻‍♂️  
+And that's pretty much it... 🤷🏻‍♂️
+_Docs comming soon !! Expect them [here](https://github.com/vexy/analytico/wiki)._
 
 ## Installation
 `Analytico` can easily be installed using SPM.  
@@ -46,7 +43,7 @@ Quick links:
 > Package name: Analytico  
 > URL: https://github.com/vexy/analytico.git
 
-Your `Package.swift` example:
+`Package.swift` example:
 ```
 let package = Package(
     name: "YOUR_PACKAGE",
@@ -65,9 +62,18 @@ let package = Package(
 )
 ```
 
+Keep your dependency tree with `main` branch untill official, `v1.0` release comes up.
+
+# Controbution
+... is more than welcome :)
+Feel free to fire an [issue](https://github.com/vexy/analytico/issues) or start [discussion](https://github.com/vexy/analytico/discussions) at your will.
+Wikis will be used for [documentation](https://github.com/vexy/analytico/wiki).
+
+**Cowirking enabled and opened. Drop a message if you're interested !!**
+
 # Licence
 `Analytico` has been published under `MIT Licence`.  
-Check the LICENCE for more information.
+Check the LICENCE file for more information.
 
 ---  
 Copyright (C) 2022 Veljko Tekelerovic  
