@@ -34,6 +34,7 @@ Analytico.collect()     // still in progress, don't rely on this untill v1.0 !!
 ```
 
 And that's pretty much it... 🤷🏻‍♂️
+
 _Docs comming soon !! Expect them [here](https://github.com/vexy/analytico/wiki)._
 
 ## Installation
@@ -64,12 +65,12 @@ let package = Package(
 
 Keep your dependency tree with `main` branch untill official, `v1.0` release comes up.
 
-# Controbution
+# Contribution
 ... is more than welcome :)
 Feel free to fire an [issue](https://github.com/vexy/analytico/issues) or start [discussion](https://github.com/vexy/analytico/discussions) at your will.
 Wikis will be used for [documentation](https://github.com/vexy/analytico/wiki).
 
-**Cowirking enabled and opened. Drop a message if you're interested !!**
+**Coworking enabled and opened. Drop a message if you're interested !!**
 
 # Licence
 `Analytico` has been published under `MIT Licence`.  
