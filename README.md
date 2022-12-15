@@ -1,8 +1,7 @@
 <div align="center">
-<i>PROJECT IS IN <b>VERY EARLY STAGES</b>. CHECK PROJECTS FOR CURRENT PROGRESS</i>
+<i>PROJECT IS IN <b>VERY EARLY STAGES</b>. CHECK PROJECTS FOR CURRENT PROGRESS</i><br>
+<b>Coworking enabled and opened.</b> Drop a message if you're interested !!
 </div><br>
-
-**Coworking enabled and opened. Drop a message if you're interested !!**
   
 
 # Analytico
