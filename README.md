@@ -1,10 +1,17 @@
+<div align="center">
+<i>PROJECT IS IN <b>VERY EARLY STAGES</b>. CHECK PROJECTS FOR CURRENT PROGRESS</i>
+</div><br>
+
+**Coworking enabled and opened. Drop a message if you're interested !!**
+  
+
 # Analytico
-Analytico is _super-simple analytics data collector_ written in pure `Swift 5`.  
+Analytico is _super-simple analytics library_ written in pure `Swift 5`.  
 
 [![Swift](https://github.com/vexy/analytico/actions/workflows/swift-build.yml/badge.svg?branch=main)](https://github.com/vexy/analytico/actions/workflows/swift-build.yml)
 
 As they said:  
-> _Use it wisely_ ☝️
+> _Use it wisely_ ☝️  
 
 ## Usage
 Using `Analytico` is pretty darn simple. All you can do are following two things:
@@ -69,8 +76,6 @@ Keep your dependency tree with `main` branch untill official, `v1.0` release com
 ... is more than welcome :)
 Feel free to fire an [issue](https://github.com/vexy/analytico/issues) or start [discussion](https://github.com/vexy/analytico/discussions) at your will.
 Wikis will be used for [documentation](https://github.com/vexy/analytico/wiki).
-
-**Coworking enabled and opened. Drop a message if you're interested !!**
 
 # Licence
 `Analytico` has been published under `MIT Licence`.  
